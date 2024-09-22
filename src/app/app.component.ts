@@ -15,6 +15,8 @@ import { TenantModule } from './component/tenant/tenant.module';
 import { BillingModule } from './component/billing/billing.module';
 import { MeterModule } from './component/meter/meter.module';
 import { MaintenanceModule } from './component/maintenance/maintenance.module';
+import { LoginModule } from './component/login/login.module';
+import { RegisterModule } from './component/register/register.module';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +34,9 @@ import { MaintenanceModule } from './component/maintenance/maintenance.module';
     MeterModule,
     MaintenanceModule,
     DialogModule,
-    DecimalPipe
+    DecimalPipe,
+    LoginModule,
+    RegisterModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -47,6 +51,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+    // this.router.navigate(["./rooms"]);
     // this.authService.getCompanyList().subscribe(
     //   (companies: any) => {
     //     if (companies?.length > 0) {

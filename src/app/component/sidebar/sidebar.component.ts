@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { filter } from "rxjs";
 
 @Component({
     selector: "app-sidebar",
@@ -8,14 +9,22 @@ import { Router } from "@angular/router";
 })
 export class SidebarComponent {
 
-    selectedMenu!: string;
-    
-    constructor(private router: Router) {
+    selectedMenu: string = 'rooms';
+
+
+    constructor(private router: Router, private route: ActivatedRoute) {
 
     }
 
     ngOnInit() {
 
+        this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: any) => {
+        if(event.url == "/rooms") {
+            this.selectedMenu = "rooms";
+        }
+      })
     }
 
     onMenuClick(url: string) {

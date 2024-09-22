@@ -15,12 +15,12 @@
             </svg>
       </span>
         <input type="number" class="form-control" formControlName="roomNumber">
-        @if(roomForm.get('roomNo')?.hasError('required')) {
-        <div class="invalid-feedback">
-          Please choose a username.
-        </div>
-        }
       </div>
+      <!-- @if(roomForm.get('roomNumber')?.hasError('required')) {
+        <div >
+          Room number is required
+        </div>
+        } -->
     </div>
 
     <div class="mb-3">

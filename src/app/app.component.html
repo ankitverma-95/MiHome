@@ -7,32 +7,3 @@
 		</div>
 	</div>
 </div>
-
-
-<!-- @if(!currRoute.url.includes('auth')) {
-	<app-header [drawer]="drawer" [router]="currRoute"></app-header>
-  }
-  <mat-drawer-container class="example-container" [hasBackdrop]="mode === 'over'">
-	<mat-drawer #drawer [mode]="mode" [opened]="opened">
-	  <div class="institute-cntr">
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0xSbvdIzkEZr86e42BeZhr13eqgjL7th2g&s" alt="institute">
-		<span id="name">Nothing Public School</span>
-		<button mat-button id="btn">View profile</button>
-	  </div>
-	  <div id="divider"></div>
-	  <div class="list-cntr">
-		<mat-nav-list>
-		  <mat-list-item [activated]="selectedListItem == 'dashboard'" (click)="redirectToDetails('dashboard')">Dashboard</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'classes'" (click)="redirectToDetails('classes')">Classes</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'student'" (click)="redirectToDetails('student')">Student</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'staff'" (click)="redirectToDetails('staff')">Staff</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'session'" (click)="redirectToDetails('session')">Sessions</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'event'" (click)="redirectToDetails('event')">Events</mat-list-item>
-		  <mat-list-item [activated]="selectedListItem == 'notice'" (click)="redirectToDetails('notice')">Notices</mat-list-item>
-		</mat-nav-list>
-	  </div>
-	</mat-drawer>
-	<mat-drawer-content>
-	  <router-outlet></router-outlet>
-	</mat-drawer-content>
-  </mat-drawer-container> -->

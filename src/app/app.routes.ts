@@ -4,9 +4,12 @@ import { TenantComponent } from './component/tenant/tenant.component';
 import { BillingComponent } from './component/billing/billing.component';
 import { MeterComponent } from './component/meter/meter.component';
 import { MaintenanceComponent } from './component/maintenance/maintenance.component';
+import { LoginComponent } from './component/login/login.component';
+import { RegisterComponent } from './component/register/register.component';
 
 export const routes: Routes = [
-    // { path: 'auth/login', component: LoginComponent, pathMatch: 'full' },
+    { path: 'login', component: LoginComponent, pathMatch: 'full' },
+    { path: 'register', component: RegisterComponent, pathMatch: 'full' },
     // { path: 'auth/profile/new', component: NewProfileComponent, pathMatch: 'full' },
     // { path: 'auth/institute/new', component: NewInstituteComponent, pathMatch: 'full' },
     // { path: 'auth/institute/select', component: SelectInstituteComponent, pathMatch: 'full' },

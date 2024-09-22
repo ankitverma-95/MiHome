@@ -1,0 +1,74 @@
+<div class="register">
+    <span class="heading d-flex align-items-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+            <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"/>
+            <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3z"/>
+          </svg> 
+          <span id="icon">MiHome</span>
+    </span>
+    <div class="card w-25 h-auto">
+        <h4 class="card-header">Register</h4>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label class="form-label">Name</label>
+                    <input type="text" formControlName="name" class="form-control"  />
+                    <!-- <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                    </div> -->
+                    <!-- @if(form.get('name')?.hasError('required')) {
+                        <div>Name id is required</div>
+                    } -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Phone number</label>
+                    <input type="number" formControlName="phoneNumber" class="form-control" />
+                    <!-- <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                        <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div> -->
+                    <!-- @if(form.get('phoneNumber')?.hasError('required')) {
+                        <div>Phone number id is required</div>
+                    } -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input type="text" formControlName="address" class="form-control" />
+                    <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div> -->
+                    <!-- @if(form.get('address')?.hasError('required')) {
+                        <div>Address id is required</div>
+                    } -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Id</label>
+                    <input type="text" formControlName="emailId" class="form-control" />
+                    <!-- <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div> -->
+                    <!-- @if(form.get('emailId')?.hasError('required')) {
+                        <div>Email id is required</div>
+                    } -->
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" formControlName="password" class="form-control" />
+                    <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                        <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+                    </div> -->
+                    <!-- @if(form.get('password')?.hasError('required')) {
+                        <div>Password should be 6 digits </div>
+                    } -->
+                </div>
+                <div>
+                    <button [disabled]="loading" class="btn btn-primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                        Register
+                    </button>
+                    <a class="btn btn-link" (click)="redirectToCancel()">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
