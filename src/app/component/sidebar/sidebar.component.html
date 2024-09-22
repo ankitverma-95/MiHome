@@ -1,0 +1,48 @@
+<div class="sidebar p-3">
+  <div class="institute-cntr">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd0xSbvdIzkEZr86e42BeZhr13eqgjL7th2g&s"
+      alt="institute">
+    <span id="name"></span>
+    <!-- <button mat-button id="btn">View profile</button> -->
+  </div>
+  <div class="divider"></div>
+
+  <div class="list-group">
+    <a class="list-group-item-action" (click)="onMenuClick('rooms')" [ngClass]="selectedMenu == 'rooms' ? 'color': ''">
+      <div class="list-item p-3">
+        Room
+      </div>
+    </a>
+    <a class="list-group-item-action" (click)="onMenuClick('tenants')" [ngClass]="selectedMenu == 'tenants' ? 'color': ''">
+      <div class="list-item p-3">
+        Tenant
+      </div>
+    </a>
+
+    <a class="list-group-item-action">
+      <div class="list-item p-3">
+        Billing
+      </div>
+    </a>
+
+    <a class=" list-group-item-action " (click)="onMenuClick('meters')"
+      [ngClass]="selectedMenu =='meters' ? 'color': ''">
+      <div class="list-item p-3">
+        Meter
+      </div>
+    </a>
+
+
+    <a class="list-group-item-action ">
+      <div class="list-item p-3">
+        Maintainence
+      </div>
+    </a>
+
+    <!-- <a class="list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+      <div class="list-item p-3">
+        Document
+      </div>
+    </a> -->
+  </div>
+</div>

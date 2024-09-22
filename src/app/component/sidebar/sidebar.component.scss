@@ -1,0 +1,53 @@
+.sidebar {
+    width: 399px;
+    height: 100%;
+    background: #FFFFFF;
+ 
+    .institute-cntr {
+
+        display: flex;
+        flex-direction: column;
+        padding: 32px;
+        align-items: center;
+  
+        img {
+          height: 100px;
+          width: 100px;
+          border-radius: 100%;
+        }
+  
+        #name {
+          color: #404040;
+          font-weight: 500;
+          font-family: 'Roboto';
+          margin-top: 12px;
+        }
+  
+        #btn {
+          color : var(--french-violet)
+        }
+      }
+
+      .divider {
+        height: 1px;
+        background: #CAC4D0;
+        margin-bottom: 32px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .list-group {
+
+        .color {
+          background-color: #FDE5E3;
+        }
+
+        .list-item {
+            color: #525252;
+            font-size: 20px;
+            font-weight: 400;
+        }
+      }
+}

@@ -1,0 +1,73 @@
+<div class="rooms">
+  <div class="header-container">
+    <div class="section">
+      <span id="header">Rooms</span>
+
+      <button type="button" class="btn btn-primary" (click)="open()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus"
+          viewBox="0 0 16 16">
+          <path
+            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+        </svg>
+        Add
+      </button>
+    </div>
+
+    <form>
+      <div class="mb-3 row">
+        <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Search Room:</label>
+        <div class="col-xs-3 col-sm-auto">
+          <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter" />
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="filter-container">
+    <span class="total-student">
+      <span class="header">Total Rooms: {{Rooms.length}}</span>
+    </span>
+
+    <!-- <div class="filters">
+        <div class="filter" [ngStyle]="{'background': filterValue == 'all' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('all')">All</div>
+        <div class="filter" [ngStyle]="{'background': filterValue == 'examination' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('examination')">Examination</div>
+        <div class="filter" [ngStyle]="{'background': filterValue == 'announcement' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('announcement')">Announcement</div>
+        <div class="filter" [ngStyle]="{'background': filterValue == 'result' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('result')">Result</div>
+        <div class="filter" [ngStyle]="{'background': filterValue == 'public' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('public')">Public</div>
+        <div class="filter" [ngStyle]="{'background': filterValue == 'restricted' ? '#ffd9e1' : '#FFFFFF'}" (click)="onClick('restricted')">Restricted</div>
+      </div> -->
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Room No.</th>
+        <th scope="col">floor</th>
+        <th scope="col">Price</th>
+        <th scope="col">Availability</th>
+        <th scope="col">Tenant Name</th>
+        <th scope="col">Contact Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (room of Rooms; track room.roomNumber; let i = $index) {
+      <tr>
+        <th scope="row">{{ i+1 }}</th>
+        <td>
+          {{ room.roomNumber }}
+        </td>
+        <td>{{ room.floor }}</td>
+        <td>{{ room.price | number }}</td>
+        <td>{{ room.availability }}</td>
+        <td>{{ room.tenantName }}</td>
+        <td>{{ room.tenantContact }}</td>
+      </tr>
+      }@empty {
+      <tr>
+        <td colspan="7" style="text-align: center">No countries found</td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
