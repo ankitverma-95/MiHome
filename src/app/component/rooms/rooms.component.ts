@@ -148,16 +148,113 @@ export class RoomsComponent implements OnInit {
 
   closeResult = '';
 
-  Rooms: any = [
-    {
-      roomNumber: "1",
-      price: "8968",
-      availability: '2023-10-31',
-      tenantName: 'dbunting0@php.net',
-      tenantContact: '1331500427',
-      floor: 'Second Floor',
-    },
-  ];
+  Rooms: any = [{
+    "roomNumber": "1",
+    "price": "3723",
+    "availability": "1/17/2024",
+    "tenantName": "Juliann Aynold",
+    "tenantContact": "6120085645",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "2",
+    "price": "4103",
+    "availability": "5/19/2024",
+    "tenantName": "Barnett Darrigoe",
+    "tenantContact": "9210301587",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "3",
+    "price": "6014",
+    "availability": "9/10/2024",
+    "tenantName": "",
+    "tenantContact": "",
+    "floor": "First floor"
+   } ,{
+    "roomNumber": "4",
+    "price": "9936",
+    "availability": "2/28/2024",
+    "tenantName": "Jolynn Moger",
+    "tenantContact": "3269283369",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "5",
+    "price": "3885",
+    "availability": "2/10/2024",
+    "tenantName": "Angele Perrone",
+    "tenantContact": "4482815683",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "6",
+    "price": "3157",
+    "availability": "1/30/2024",
+    "tenantName": "Frasquito Eddow",
+    "tenantContact": "7882441368",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "7",
+    "price": "5089",
+    "availability": "12/30/2023",
+    "tenantName": "",
+    "tenantContact": "",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "8",
+    "price": "4071",
+    "availability": "12/11/2023",
+    "tenantName": "Ethelyn Perroni",
+    "tenantContact": "4796901981",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "9",
+    "price": "5924",
+    "availability": "6/25/2024",
+    "tenantName": "",
+    "tenantContact": "",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "10",
+    "price": "7114",
+    "availability": "1/9/2024",
+    "tenantName": "Patrice Laurenz",
+    "tenantContact": "5181783740",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "20",
+    "price": "2831",
+    "availability": "10/31/2023",
+    "tenantName": "Des Sillwood",
+    "tenantContact": "6809484078",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "22",
+    "price": "3313",
+    "availability": "7/7/2024",
+    "tenantName": "Roth Bodimeade",
+    "tenantContact": "2947428676",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "11",
+    "price": "7114",
+    "availability": "1/9/2024",
+    "tenantName": "",
+    "tenantContact": "",
+    "floor": "third floor"
+  }, {
+    "roomNumber": "12",
+    "price": "2831",
+    "availability": "10/31/2023",
+    "tenantName": "Des Sillwood",
+    "tenantContact": "6809484078",
+    "floor": "First floor"
+  }, {
+    "roomNumber": "13",
+    "price": "3313",
+    "availability": "7/7/2024",
+    "tenantName": "",
+    "tenantContact": "",
+    "floor": "third floor"
+  },]
+  
   temp: any = this.Rooms;
 
   filter = new FormControl('', { nonNullable: true });

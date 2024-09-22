@@ -29,31 +29,32 @@
       </span>
     </div>
   
-
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">S.No.</th>
-          <th scope="col">Payee Name</th>
-          <th scope="col">Room No.</th>
-          <th scope="col">Description</th>
-          <th scope="col">Amount</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (maintenance of Maintenances; track maintenance.roomNumber; let i = $index) {
-        <tr>
-          <th scope="row">{{ i+1 }}</th>
-          <td>{{ maintenance.payeeName }}</td>
-          <td>{{ maintenance.roomNumber }}</td>
-          <td>{{ maintenance.description  }}</td>
-          <td>{{ maintenance.amount | number }}</td>
-        </tr>
-        }@empty {
-        <tr>
-          <td colspan="7" style="text-align: center">No Maintenances found</td>
-        </tr>
-        }
-      </tbody>
-    </table>
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">S.No.</th>
+            <th scope="col">Payee Name</th>
+            <th scope="col">Room No.</th>
+            <th scope="col">Description</th>
+            <th scope="col">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (maintenance of Maintenances; track maintenance.roomNumber; let i = $index) {
+          <tr>
+            <th scope="row">{{ i+1 }}</th>
+            <td>{{ maintenance.payeeName }}</td>
+            <td>{{ maintenance.roomNumber }}</td>
+            <td>{{ maintenance.description  }}</td>
+            <td>{{ maintenance.amount | number }}</td>
+          </tr>
+          }@empty {
+          <tr>
+            <td colspan="7" style="text-align: center">No Maintenances found</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   </div>
