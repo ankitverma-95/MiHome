@@ -19,7 +19,7 @@
       </div>
     </a>
 
-    <a class="list-group-item-action">
+    <a class="list-group-item-action" (click)="onMenuClick('billings')" [ngClass]="selectedMenu == 'billings' ? 'color': ''">
       <div class="list-item p-3">
         Billing
       </div>

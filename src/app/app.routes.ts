@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { RoomsComponent } from './component/rooms/rooms.component';
 import { TenantComponent } from './component/tenant/tenant.component';
+import { BillingComponent } from './component/billing/billing.component';
 
 export const routes: Routes = [
     // { path: 'auth/login', component: LoginComponent, pathMatch: 'full' },
@@ -10,7 +11,7 @@ export const routes: Routes = [
     // { path: 'dashboard', component: DashboardComponent, },
     { path: 'rooms', component: RoomsComponent},
     { path: 'tenants', component: TenantComponent},
-    // { path: 'student/new', component: NewStudentComponent},
+    { path: 'billings', component: BillingComponent},
     // { path: 'student', component: StudentListComponent},
     // { path: 'student/detail/:studentId', component: StudentDetailComponent},
     // { path: 'staff/new', component: NewStaffComponent},

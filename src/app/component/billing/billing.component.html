@@ -1,7 +1,7 @@
-<div class="tenant">
+<div class="billing">
     <div class="header-container">
       <div class="section">
-        <span id="header">Tenants</span>
+        <span id="header">Billings</span>
   
         <button type="button" class="btn btn-primary" (click)="open()">
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-plus"
@@ -15,7 +15,7 @@
   
       <form>
         <div class="mb-3 row">
-          <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Search Tenant:</label>
+          <label for="table-filtering-search" class="col-xs-3 col-sm-auto col-form-label">Search Billing:</label>
           <div class="col-xs-3 col-sm-auto">
             <input id="table-filtering-search" class="form-control" type="text" [formControl]="filter" />
           </div>
@@ -25,7 +25,7 @@
   
     <div class="filter-container">
       <span class="total-student">
-        <span class="header">Total Tenants: {{Tenants.length}}</span>
+        <span class="header">Total Billings: {{Billings.length}}</span>
       </span>
     </div>
   
@@ -33,28 +33,28 @@
       <thead>
         <tr>
           <th scope="col">S.No.</th>
-          <th scope="col">Tenant Name</th>
+          <th scope="col">Payee Name</th>
           <th scope="col">Room No.</th>
-          <th scope="col">Contact</th>
-          <th scope="col">Date of Joining</th>
-          <th scope="col">Aadhar Number</th>
-          <th scope="col">Rent</th>
+          <th scope="col">Date of Payment</th>
+          <th scope="col">Date Till Rent</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Balance</th>
         </tr>
       </thead>
       <tbody>
-        @for (tenant of Tenants; track tenant.roomNumber; let i = $index) {
+        @for (billing of Billings; track billing.roomNumber; let i = $index) {
         <tr>
           <th scope="row">{{ i+1 }}</th>
-          <td>{{ tenant.name }}</td>
-          <td>{{ tenant.roomNumber }}</td>
-          <td>{{ tenant.contact  }}</td>
-          <td>{{ tenant.dob }}</td>
-          <td>{{ tenant.aadharNumber  }}</td>
-          <td>{{ tenant.rent | number }}</td>
+          <td>{{ billing.payeeName }}</td>
+          <td>{{ billing.roomNumber }}</td>
+          <td>{{ billing.dateOfPayment }}</td>
+          <td>{{ billing.dateTillRent  }}</td>
+          <td>{{ billing.payment | number }}</td>
+          <td>{{ billing.balance | number }}</td>
         </tr>
         }@empty {
         <tr>
-          <td colspan="7" style="text-align: center">No Tenants found</td>
+          <td colspan="7" style="text-align: center">No Billings found</td>
         </tr>
         }
       </tbody>
