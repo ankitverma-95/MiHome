@@ -28,11 +28,11 @@ export class NewTenantComponent {
             const td = this.tenantForm.value
             const tenant = {
                 name: td.name,
-                roomNumber: Number(td.roomNumber),
-                contact: Number(td.contact),
+                roomNumber: td.roomNumber+"",
+                contact: td.contact+"",
                 dob: td.dob.year+"-"+td.dob.month+"-"+td.dob.day,
-                aadharNumber: Number(td.aadharNumber),
-                rent: Number(td.rent),
+                aadharNumber: td.aadharNumber+"",
+                rent: td.rent+"",
             }
             this.activeModal.close(tenant);
         } else {

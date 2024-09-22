@@ -28,7 +28,21 @@ export class NewRoomComponent {
     saveRoom() {
         if(this.roomForm.valid) {
             // console.log(this.roomForm.value);
-            this.activeModal.close(this.roomForm.value);
+            const room = this.roomForm.value;
+            const newRoom = {
+                roomNumber: room.roomNumber+"",
+                price: room.price + "",
+                availability:
+                  room.availability.year +
+                  '-' +
+                  room.availability.month +
+                  '-' +
+                  room.availability.day,
+                tenantName: room.tenantName,
+                tenantContact: room.tenantContact+"",
+                floor: room.floor+"",
+              };
+            this.activeModal.close(newRoom);
         } else {
             this.roomForm.markAllAsTouched();
         }

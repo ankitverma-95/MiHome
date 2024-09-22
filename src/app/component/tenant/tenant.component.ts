@@ -48,11 +48,11 @@ export class TenantComponent implements OnInit {
   Tenants: any = [
     {
       name: "Firoj Kumar",
-      roomNumber: 8968,
-      contact: 1331500427,
+      roomNumber: "8968",
+      contact: "1331500427",
       dob: '2023-10-31',
-      aadharNumber: 4353434343332,
-      rent: 4433,
+      aadharNumber: "4353434343332",
+      rent: "4433",
     },
   ];
   temp: any = this.Tenants;
@@ -97,11 +97,11 @@ export class TenantComponent implements OnInit {
         const term = text.toLowerCase();
         return (
             tenant.name.toLowerCase().includes(term) ||
-            tenant.roomNumber == term ||
-            tenant.contact == term ||
+            tenant.roomNumber.toLowerCase().includes(term) ||
+            tenant.contact.toLowerCase().includes(term) ||
             tenant.dob.toLowerCase().includes(term) ||
-            tenant.aadharNumber == term ||
-            tenant.rent == term 
+            tenant.aadharNumber.toLowerCase().includes(term) ||
+            tenant.rent.toLowerCase().includes(term)
         );
     })
   }

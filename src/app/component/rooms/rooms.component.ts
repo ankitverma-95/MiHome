@@ -24,14 +24,14 @@ import {
 import { debounceTime, map, Observable, startWith } from 'rxjs';
 import { NewRoomComponent } from '../dialog/new-room/new.room.component';
 
-interface Room {
-  roomNumber: number;
-  price: number;
-  availability: string;
-  tenantName: string;
-  tenantContact: string;
-  floor: string;
-}
+// interface Room {
+//   roomNumber: number;
+//   price: number;
+//   availability: string;
+//   tenantName: string;
+//   tenantContact: string;
+//   floor: string;
+// }
 
 // const ROOMS: Room[] = [
 //   {
@@ -150,8 +150,8 @@ export class RoomsComponent implements OnInit {
 
   Rooms: any = [
     {
-      roomNumber: 1,
-      price: 8968,
+      roomNumber: "1",
+      price: "8968",
       availability: '2023-10-31',
       tenantName: 'dbunting0@php.net',
       tenantContact: '1331500427',
@@ -179,20 +179,7 @@ export class RoomsComponent implements OnInit {
     modalRef.closed.subscribe((room) => {
       console.log(room);
       if (room) {
-        const newRoom = {
-          roomNumber: Number(room.roomNumber),
-          price: Number(room.price),
-          availability:
-            room.availability.year +
-            '-' +
-            room.availability.month +
-            '-' +
-            room.availability.day,
-          tenantName: room.tenantName,
-          tenantContact: room.tenantContact,
-          floor: room.floor,
-        };
-        this.Rooms.push(newRoom);
+        this.Rooms.push(room);
         // this.temp.push(newRoom);
         console.log(this.Rooms);
       }
@@ -207,16 +194,16 @@ export class RoomsComponent implements OnInit {
 
   onClick(filter: any) {}
 
-  search(text: string, pipe: PipeTransform): Room[] {
+  search(text: string, pipe: PipeTransform) {
     const term = text.toLowerCase();
     return this.Rooms.filter((room: any) => {
       return (
         room.tenantName.toLowerCase().includes(term) ||
         room.floor.toLowerCase().includes(term) ||
-        pipe.transform(room.roomNumber).includes(term) ||
-        room.tenantContact.includes(term) ||
-        // pipe.transform(room.price).includes(term) ||
-        room.availability.includes(term)
+        room.roomNumber.toLowerCase().includes(term) ||
+        room.tenantContact.toLowerCase().includes(term) ||
+        room.availability.toLowerCase().includes(term) ||
+        room.price.toLowerCase().includes(term)
       );
     });
   }
