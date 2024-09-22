@@ -13,6 +13,7 @@ import { RoomsModule } from './component/rooms/rooms.module';
 import { DialogModule } from './component/dialog/dialog.module';
 import { TenantModule } from './component/tenant/tenant.module';
 import { BillingModule } from './component/billing/billing.module';
+import { MeterModule } from './component/meter/meter.module';
 
 @Component({
   selector: 'app-root',
@@ -27,6 +28,7 @@ import { BillingModule } from './component/billing/billing.module';
     RoomsModule,
     TenantModule,
     BillingModule,
+    MeterModule,
     DialogModule,
     DecimalPipe
   ],
