@@ -14,6 +14,7 @@ import { DialogModule } from './component/dialog/dialog.module';
 import { TenantModule } from './component/tenant/tenant.module';
 import { BillingModule } from './component/billing/billing.module';
 import { MeterModule } from './component/meter/meter.module';
+import { MaintenanceModule } from './component/maintenance/maintenance.module';
 
 @Component({
   selector: 'app-root',
@@ -29,6 +30,7 @@ import { MeterModule } from './component/meter/meter.module';
     TenantModule,
     BillingModule,
     MeterModule,
+    MaintenanceModule,
     DialogModule,
     DecimalPipe
   ],

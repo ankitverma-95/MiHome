@@ -25,7 +25,7 @@
       </div>
     </a>
 
-    <a class=" list-group-item-action " (click)="onMenuClick('meters')" [ngClass]="selectedMenu == 'meters' ? 'color': ''"
+    <a class=" list-group-item-action" (click)="onMenuClick('meters')" [ngClass]="selectedMenu == 'meters' ? 'color': ''"
       [ngClass]="selectedMenu =='meters' ? 'color': ''">
       <div class="list-item p-3">
         Meter
@@ -33,9 +33,9 @@
     </a>
 
 
-    <a class="list-group-item-action ">
+    <a class="list-group-item-action" (click)="onMenuClick('maintenances')" [ngClass]="selectedMenu == 'maintenances' ? 'color': ''">
       <div class="list-item p-3">
-        Maintainence
+        Maintenance
       </div>
     </a>
 

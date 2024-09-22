@@ -4,6 +4,7 @@ import { NewRoomModule } from './new-room/new.room.module';
 import { NewTenantModule } from './new-tenant/new.tenant.module';
 import { NewBillingModule } from './new-billing/new.billing.module';
 import { NewMeterModule } from './new-meter/new.meter.module';
+import { NewMaintenanceModule } from './new-maintenance/new.maintenance.module';
 
 @NgModule({
     declarations: [],
@@ -12,7 +13,8 @@ import { NewMeterModule } from './new-meter/new.meter.module';
         NewRoomModule,
         NewTenantModule,
         NewBillingModule,
-        NewMeterModule
+        NewMeterModule,
+        NewMaintenanceModule
      ],
     exports: [],
     providers: [],

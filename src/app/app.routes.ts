@@ -3,6 +3,7 @@ import { RoomsComponent } from './component/rooms/rooms.component';
 import { TenantComponent } from './component/tenant/tenant.component';
 import { BillingComponent } from './component/billing/billing.component';
 import { MeterComponent } from './component/meter/meter.component';
+import { MaintenanceComponent } from './component/maintenance/maintenance.component';
 
 export const routes: Routes = [
     // { path: 'auth/login', component: LoginComponent, pathMatch: 'full' },
@@ -14,7 +15,7 @@ export const routes: Routes = [
     { path: 'tenants', component: TenantComponent},
     { path: 'billings', component: BillingComponent},
     { path: 'meters', component: MeterComponent},
-    // { path: 'student/detail/:studentId', component: StudentDetailComponent},
+    { path: 'maintenances', component: MaintenanceComponent},
     // { path: 'staff/new', component: NewStaffComponent},
     // { path: 'staff', component: StaffComponent},
     // { path: 'staff/detail/:staffId', component: StaffDetailComponent},
