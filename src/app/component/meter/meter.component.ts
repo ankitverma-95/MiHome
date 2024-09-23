@@ -24,6 +24,7 @@ import {
 import { debounceTime, map, Observable, startWith } from 'rxjs';
 import { NewBillingComponent } from '../dialog/new-billing/new.billing.component';
 import { NewMeterComponent } from '../dialog/new-meter/new.meter.component';
+import { MeterService } from '../../service/meter.service';
 
 interface Meter {
     roomNumber: string;
@@ -45,85 +46,24 @@ export class MeterComponent implements OnInit {
 
   closeResult = '';
 
-  Meters: any = [{
-    "roomNumber": "1",
-    "readingDate": "2005-06-06",
-    "electricityBill": "446",
-    "previousReading": "731",
-    "currentReading": "96307"
-  }, {
-    "roomNumber": "2",
-    "readingDate": "2020-10-30",
-    "electricityBill": "96357",
-    "previousReading": "739",
-    "currentReading": "333"
-  }, {
-    "roomNumber": "3",
-    "readingDate": "2023-01-29",
-    "electricityBill": "43528",
-    "previousReading": "17",
-    "currentReading": "78854"
-  }, {
-    "roomNumber": "4",
-    "readingDate": "2016-01-12",
-    "electricityBill": "09870",
-    "previousReading": "05959",
-    "currentReading": "64359"
-  }, {
-    "roomNumber": "5",
-    "readingDate": "2009-02-24",
-    "electricityBill": "295",
-    "previousReading": "0",
-    "currentReading": "3434"
-  }, {
-    "roomNumber": "6",
-    "readingDate": "2012-05-31",
-    "electricityBill": "7798",
-    "previousReading": "1198",
-    "currentReading": "1390"
-  }, {
-    "roomNumber": "7",
-    "readingDate": "2009-08-25",
-    "electricityBill": "3185",
-    "previousReading": "76",
-    "currentReading": "255"
-  }, {
-    "roomNumber": "8",
-    "readingDate": "2008-03-28",
-    "electricityBill": "23243",
-    "previousReading": "13",
-    "currentReading": "89700"
-  }, {
-    "roomNumber": "9",
-    "readingDate": "2022-03-17",
-    "electricityBill": "488",
-    "previousReading": "371",
-    "currentReading": "2599"
-  }, {
-    "roomNumber": "10",
-    "readingDate": "2014-07-23",
-    "electricityBill": "801",
-    "previousReading": "42",
-    "currentReading": "444"
-  }, {
-    "roomNumber": "11",
-    "readingDate": "2016-09-02",
-    "electricityBill": "51",
-    "previousReading": "471",
-    "currentReading": "31951"
-  }, {
-    "roomNumber": "12",
-    "readingDate": "2012-02-12",
-    "electricityBill": "3814",
-    "previousReading": "04308",
-    "currentReading": "83466"
-  },]
+  Meters: any = [];
 
-  temp: any = this.Meters;
+  temp: any = [];
 
   filter = new FormControl('', { nonNullable: true });
 
-  constructor(pipe: DecimalPipe) {
+  constructor(pipe: DecimalPipe, private meterService: MeterService) { 
+  }
+
+  ngOnInit(): void {
+
+    this.meterService.getMeter().subscribe((meter) => {
+      this.Meters = meter;
+      this.temp = meter;
+    }, err => {
+      console.error(err);
+    });
+
     this.filter.valueChanges.pipe(debounceTime(200)).subscribe((value) => {
       console.log(value);
       if (this.Meters.length == 0 || value.length == 0) {
@@ -132,9 +72,8 @@ export class MeterComponent implements OnInit {
         this.Meters = this.search(value);
       }
     });
+    
   }
-
-  ngOnInit(): void {}
 
   open() {
     const modalRef = this.modalService.open(NewMeterComponent);
@@ -144,6 +83,11 @@ export class MeterComponent implements OnInit {
         this.Meters.push(meter);
         // this.temp.push(billing);
         console.log(this.Meters);
+        this.meterService.addMeter(meter).subscribe((res) => {
+         console.log(res); 
+        }, err => {
+          console.error(err);
+        })
       }
     });
   }
