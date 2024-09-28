@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserService } from '../../service/user.service';
 
 
 @Component({ templateUrl: './register.component.html', styleUrl: "./register.component.scss" })
@@ -13,6 +14,7 @@ export class RegisterComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
+        private userService: UserService,
     ) { }
 
     ngOnInit() {
@@ -34,13 +36,15 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-
         // stop here if form is invalid
         if (this.form.invalid) {
             return;
         }
-
-        this.router.navigate(["./login"]);
+        this.userService.addUser(this.form.value).subscribe((res) => {
+            this.router.navigate(["./login"]);
+        }, err => {
+            console.error(err);
+        })
 
         // this.loading = true;
         // this.accountService.register(this.form.value)

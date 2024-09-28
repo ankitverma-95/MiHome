@@ -40,4 +40,8 @@
             </form>
         </div>
     </div>
+
+    @if(err) {
+        <ngb-toast [autohide]="true" [delay]="1500"  class="bg-danger text-light position-fixed bottom-0 end-0 m-4"> Username/Password is wrong. </ngb-toast>
+    }
 </div>

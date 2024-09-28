@@ -51,7 +51,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.router.navigate(["./rooms"]);
+    this.router.navigate(["./login"]);
     // this.authService.getCompanyList().subscribe(
     //   (companies: any) => {
     //     if (companies?.length > 0) {

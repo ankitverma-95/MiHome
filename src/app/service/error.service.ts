@@ -13,9 +13,9 @@ export class ErrorService {
     if (error.status == 0) {
       // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
-      this.router.navigate(['./auth/login']);
+      this.router.navigate(['./login']);
     } else if (error.status == 401) {
-      this.router.navigate(['./auth/login']);
+      this.router.navigate(['./login']);
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong.
